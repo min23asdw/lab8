@@ -42,7 +42,7 @@ int main(){
 	cout << setw(13) << left << payment;
 	cout << setw(13) << left << newbalance;
 	cout << "\n";
-	if(newbalance==0){break;}
+	if(newbalance<=0){break;}
 	prevbalance=newbalance;
 	year++;
   }
