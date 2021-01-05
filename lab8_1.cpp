@@ -26,13 +26,16 @@ int main(){
 
 	//use 'fixed' and 'setprecision' to fix the number of decimal digits for displaying
 	//you can change input argument of 'setprecision()' to see the effect
-	while (true){
+while(true){
+
 		if(year==1){prevbalance=loan;}
 
 	interest = prevbalance*rate/100.00;
 	total=prevbalance+interest;
 		if(total < payment){payment=total;}
 		newbalance=total-payment;
+
+
 
 	cout << fixed << setprecision(2);
 	cout << setw(13) << left << year;
@@ -45,6 +48,9 @@ int main(){
 	if(newbalance<=0){break;}
 	prevbalance=newbalance;
 	year++;
-  }
+	if(interest>payment){cout << "\n-----------You Interest "<<  interest <<" more than Payment "<< payment  <<" -----------";break; }
+
+}
+
 	return 0;
 }
